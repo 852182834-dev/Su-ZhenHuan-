@@ -79,6 +79,7 @@ npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
+https://vercel.com/852182834-1073s-projects/su-zhen-huan
 ---
 
 ## 🗄️ Database Tables & RLS Configurations (SQL Scripts)
