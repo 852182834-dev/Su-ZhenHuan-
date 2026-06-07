@@ -1,113 +1,113 @@
-# 🎓 StudyHub - 大学生智能化学习辅助平台
+# 🎓 StudyHub - Intelligent Learning Assistant for College Students
 
-**StudyHub** 是一个专为大学生设计的轻量、高效、实时的**智能化学习辅助平台**。它采用现代化的 Serverless 全栈架构搭建，集成了任务管理、番茄专注时钟、备战期末倒计时以及公共学习心得共享留言板等功能，旨在帮助学生告别备考焦虑，高效规划自律生活。
-
----
-
-## 🛠️ 技术栈 (Technology Stack)
-
-本项目采用前后端同构的现代化全栈 Serverless 技术架构：
-
-### 1. 前端层 (Frontend)
-- **框架**: `Next.js 14 (App Router)` - React 服务端渲染与静态生成框架，提供极佳的响应式加载速度。
-- **视图库**: `React 18` - 组件化开发与状态管理。
-- **图标库**: `Lucide React` - 精美的现代矢量图标集。
-- **设计风格**: Vanilla CSS 玻璃拟态风格（Glassmorphism）与暗黑美学配色，适配 PC 端与移动设备。
-
-### 2. 后端与数据库 (Backend & DB - Serverless)
-- **云服务**: `Supabase`
-  - **Auth (用户认证)**: 托管用户登录、注册与权限管理，保护密码安全。
-  - **PostgreSQL (云数据库)**: 存储待办任务、考试计划和分享心得数据。
-  - **RLS (Row Level Security - 行级安全策略)**: 确保用户数据严格隔离，防止越权访问。
-
-### 3. 版本控制与部署 (DevOps)
-- **代码托管**: `GitHub` - 代码版本管理与团队协作。
-- **部署发布**: `Vercel` - 绑定 GitHub 实现代码 Push 后的 CI/CD 自动构建部署，享全球 CDN 加速。
+**StudyHub** is a lightweight, efficient, and real-time **intelligent study assistant platform** designed specifically for college students. Built on a modern serverless full-stack architecture, it integrates task management, an interactive Pomodoro timer, exam countdown trackers, and a public study sharing board to help students defeat exam anxiety and manage their self-disciplined study life efficiently.
 
 ---
 
-## 🌟 系统核心功能 (Features)
+## 🛠️ Technology Stack
 
-### 🔑 1. 双模式登录与认证
-- **安全账号注册与登录**：支持使用学生邮箱注册并登录系统，利用 JWT 实现登录态持久化。
-- **免登录体验模式 (Demo Mode)**：为了方便测试和评审，系统提供了一键免注册测试通道，数据本地存储，无需配置云服务即可快速体验核心面板功能。
+This project is built using a modern frontend-backend decoupled yet isomorphic serverless architecture:
 
-### 📅 2. 个人学习待办看板 (Todo List)
-- **学习任务规划**：支持自由添加、标记完成/未完成、删除每日任务。
-- **任务分类标签**：包括学习、考研、日常等分类，条理清晰。
-- **云端个人隐私隔离**：受行级安全保护，每个学生只能读取和操作属于自己的待办任务。
+### 1. Frontend
+- **Framework**: `Next.js 14 (App Router)` - React framework for server-side rendering and static site generation, providing lightning-fast load times.
+- **View Library**: `React 18` - Component-driven development and state management.
+- **Icons**: `Lucide React` - Clean, modern vector icon set.
+- **Styling**: Premium Glassmorphism styling with dark mode aesthetics, fully responsive for both desktop and mobile screens.
 
-### 🍅 3. 互动番茄钟 (Pomodoro Timer)
-- **极简倒计时圆环**：炫酷的动态 SVG 环形进度条，直观展示专注进度。
-- **标准时间周期**：25分钟专注模式 + 5分钟休息模式，到期触发系统级弹窗提示。
-- **状态快捷控制**：支持随时开始、暂停与一键重置。
+### 2. Backend & Database (Serverless)
+- **Cloud Infrastructure**: `Supabase`
+  - **Auth**: Secure user registration, login, and authorization using JWT-based session persistence.
+  - **PostgreSQL Database**: Storage for tasks, exam schedules, and community notes.
+  - **RLS (Row Level Security)**: Protects user privacy by ensuring strict database-level isolation.
 
-### ⏳ 4. 备考倒计时 (Exam Countdown)
-- **多科目日程记录**：自由添加备考科目与考试日期。
-- **天数智能预警**：
-  - 红色警报：距离考试 $\le$ 3 天。
-  - 橙色警告：距离考试 $\le$ 7 天。
-  - 绿色安全：距离考试 $>$ 7 天。
-- **智能计算**：自动算日并剔除过期日程。
-
-### 💬 5. 共享心得与互助社区 (Notes Board)
-- **学习留言展示**：公共留言板展示所有同学共享的学习心得、提分秘籍或干货资料。
-- **200字限制**：控制排版整齐，内容精简。
-- **自主增删控制**：只能发布自己的内容，并且只能删除自己发布的内容（非本人内容没有删除权限）。
+### 3. Version Control & Deployment (DevOps)
+- **Repository Hosting**: `GitHub` - Version control and collaboration.
+- **Hosting Platform**: `Vercel` - Connected with GitHub for automated CI/CD builds, deployments, and edge CDN delivery.
 
 ---
 
-## 🚀 快速本地开发环境搭建
+## 🌟 Key Features
 
-### 1. 克隆项目与安装依赖
+### 🔑 1. Dual Authentication Modes
+- **Secure Email Authentication**: Register and sign in with email and password, utilizing JWT to persist sessions across reloads.
+- **Demo Mode (No Register Bypass)**: For quick testing and evaluation, users can bypass registration to enter a local-only sandbox mode.
+
+### 📅 2. Personal Task Board (Todo List)
+- **Study Planning**: Easily add, toggle completion, and delete tasks.
+- **Category Labels**: Categorize items under "Study", "Exams", "Routine", etc.
+- **Secure Cloud Storage**: Enforced by Row Level Security (RLS) to ensure that users can only read and write their own data.
+
+### 🍅 3. Interactive Pomodoro Timer
+- **Circular Progress Indicator**: Cool, dynamic SVG radial progress bar showing focus status.
+- **Standard Cycles**: 25-minute study sessions followed by 5-minute break sessions, triggering system-level alerts on completion.
+- **Controls**: Pause, resume, and reset timers instantly.
+
+### ⏳ 4. Exam Countdown Tracker
+- **Subject Tracking**: Add exam subjects with target dates.
+- **Visual Alert Indicators**:
+  - Critical (Red Alert): $\le$ 3 days remaining.
+  - Warning (Orange Alert): $\le$ 7 days remaining.
+  - Safe (Green Alert): $>$ 7 days remaining.
+- **Auto-Calculations**: Automatically computes remaining days and filters out passed dates.
+
+### 💬 5. Collaborative Study Board (Notes Feed)
+- **Shared Study Log**: A public board showcasing learning notes, tips, and study resources shared by all students.
+- **200-Character Limit**: Enforces brief, clean, and readable notes.
+- **Authorized Ownership**: Users can publish notes and delete only their own posts (delete actions are restricted for other users' notes via RLS).
+
+---
+
+## 🚀 Quick Local Setup
+
+### 1. Clone & Install Dependencies
 ```bash
-# 安装项目依赖包
+# Install NPM packages
 npm install
 ```
 
-### 2. 配置环境变量
-在项目根目录下，新建 `.env.local` 配置文件，并填入您的 Supabase 连接参数：
+### 2. Configure Environment Variables
+Create a `.env.local` file in the root directory and configure your Supabase variables:
 ```properties
-# 在 Supabase 仪表盘 -> Project Settings -> API 中获取
+# Find these in your Supabase Dashboard -> Project Settings -> API
 NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-supabase-anon-key
 ```
 
-### 3. 启动开发服务器
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
-启动成功后，在浏览器访问 [http://localhost:3000](http://localhost:3000)。
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ---
 
-## 🗄️ 数据库表结构与 RLS 配置 (SQL Scripts)
+## 🗄️ Database Tables & RLS Configurations (SQL Scripts)
 
-请在 Supabase 的 **SQL Editor** 中运行以下 SQL 代码，以完成数据库表的初始化和行级安全（RLS）策略设置：
+Run the following SQL script in your Supabase **SQL Editor** to initialize the database tables and enable Row Level Security (RLS) policies:
 
 ```sql
 -- ===================================================
--- 1. 待办任务表 (study_tasks)
+-- 1. Tasks Table (study_tasks)
 -- ===================================================
 create table public.study_tasks (
   id bigint generated by default as identity primary key,
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
   user_id uuid references auth.users not null,
   title text not null,
-  category text default '学习'::text,
+  category text default 'Study'::text,
   is_completed boolean default false not null
 );
 
 alter table public.study_tasks enable row level security;
 
--- 允许登录用户操作属于自己（uid相同）的数据
+-- Allow users to perform CRUD operations only on their own tasks
 create policy "Users can perform all actions on their own tasks" 
 on public.study_tasks for all 
 using (auth.uid() = user_id);
 
 
 -- ===================================================
--- 2. 考试倒计时表 (study_exams)
+-- 2. Exam Countdowns Table (study_exams)
 -- ===================================================
 create table public.study_exams (
   id bigint generated by default as identity primary key,
@@ -119,14 +119,14 @@ create table public.study_exams (
 
 alter table public.study_exams enable row level security;
 
--- 允许登录用户操作属于自己的倒计时数据
+-- Allow users to perform CRUD operations only on their own exams
 create policy "Users can perform all actions on their own exams" 
 on public.study_exams for all 
 using (auth.uid() = user_id);
 
 
 -- ===================================================
--- 3. 共享笔记留言表 (study_notes)
+-- 3. Shared Notes Table (study_notes)
 -- ===================================================
 create table public.study_notes (
   id bigint generated by default as identity primary key,
@@ -138,17 +138,17 @@ create table public.study_notes (
 
 alter table public.study_notes enable row level security;
 
--- 允许所有登录用户查看留言
+-- Allow all authenticated users to read notes
 create policy "Allow authenticated users to read notes" 
 on public.study_notes for select 
 using (auth.role() = 'authenticated');
 
--- 允许已登录用户插入自己的留言
+-- Allow authenticated users to insert their own notes
 create policy "Allow authenticated users to insert their own notes" 
 on public.study_notes for insert 
 with check (auth.uid() = user_id);
 
--- 允许用户删除自己的留言
+-- Allow users to delete their own notes
 create policy "Allow users to delete their own notes" 
 on public.study_notes for delete 
 using (auth.uid() = user_id);
